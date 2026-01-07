@@ -1,15 +1,5 @@
-import kagglehub
-from kagglehub import KaggleDatasetAdapter
+import pandas as pd
 
-def load_dataset(
-    dataset_name = "shashanknecrothapa/ames-housing-dataset",
-    dataset_file_path = "AmesHousing.csv"
-    ):
 
-    df = kagglehub.dataset_load(
-    KaggleDatasetAdapter.PANDAS,
-    dataset_name,
-    dataset_file_path,
-    )
-    
-    return df
+def load_dataset(dataset_file_path = "AmesHousing.csv"):
+    return pd.read_csv('./data/AmesHousing.csv')
